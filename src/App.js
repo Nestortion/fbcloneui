@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import SideNav from './components/SideNav'
+import TopNav from './components/TopNav'
+import NewsFeed from './components/NewsFeed'
+import FriendList from './components/FriendList'
+import { ContentContainer } from './styles/ContentContainer'
+import { BiMessageSquareEdit } from 'react-icons/bi'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <TopNav />
+            <ContentContainer>
+                <SideNav />
+                <NewsFeed />
+                <FriendList />
+                <div className="newMessage">
+                    <h2>
+                        <BiMessageSquareEdit />
+                    </h2>
+                </div>
+            </ContentContainer>
+        </>
+    )
 }
 
-export default App;
+export default App
